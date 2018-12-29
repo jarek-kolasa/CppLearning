@@ -101,27 +101,47 @@ public:
 		cout << b1Value << endl;
 		cout << b2Value << endl;
 
+		char c1Value = '7';
+		cout << c1Value << endl;
+
+		char c2Value = 55; // ASCII number
+		cout << c2Value << endl;
+
+		cout << "Size of char: " << sizeof(char) << endl;
+
+		wchar_t wValue = 'i';
+		cout << wValue << endl;
+		cout << (char) wValue << endl;
+		cout << "Size of wchar_t: " << sizeof(wchar_t) << endl;
+
+	}
+};
+
+class IfStatement {
+public:
+	void ifStatementexample() {
+
+		string password = "hello";
+		string inputPassword;
+
+		cout << "Enter the password: " << flush;
+		cin >> inputPassword;
+
+		if(inputPassword == password){
+			cout << "Password accepted" << endl;
+		}
+
+		if(inputPassword != password){
+					cout << "Access denied" << endl;
+				}
 
 	}
 };
 
 int main() {
 
-	CharAndBool showCharAndBool;
-	showCharAndBool.charBool();
-
-	char c1Value = '7';
-	cout << c1Value << endl;
-
-	char c2Value = 55; // ASCII number
-	cout << c2Value << endl;
-
-	cout << "Size of char: " << sizeof(char) << endl;
-
-	wchar_t wValue = 'i';
-	cout << wValue << endl;
-	cout << (char)wValue << endl;
-	cout << "Size of wchar_t: " << sizeof(wchar_t) << endl;
+	IfStatement ifs;
+	ifs.ifStatementexample();
 
 	return 0;
 }
