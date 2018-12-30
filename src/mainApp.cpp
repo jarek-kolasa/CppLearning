@@ -127,12 +127,65 @@ public:
 		cout << "Enter the password: " << flush;
 		cin >> inputPassword;
 
-		if(inputPassword == password){
+		if (inputPassword == password) {
 			cout << "Password accepted" << endl;
 		}
 
-		if(inputPassword != password){
-					cout << "Access denied" << endl;
+		if (inputPassword != password) {
+			cout << "Access denied" << endl;
+		}
+
+	}
+};
+
+class IfElse {
+public:
+	void ifElseExample() {
+		cout << "Menu:" << endl;
+		cout << "1.\tCreate" << endl;
+		cout << "2.\tRead" << endl;
+		cout << "3.\tUpdate" << endl;
+		cout << "4.\tDelete" << endl;
+		cout << "5.\tQuit program" << endl;
+
+		cout << "Select the menu option > " << flush;
+		int selectedOption;
+		cin >> selectedOption;
+
+		if (selectedOption == 1) {
+			cout << "Object added" << endl;
+		} else if (selectedOption == 2) {
+			cout << "Object readed" << endl;
+		} else if (selectedOption == 3) {
+			cout << "Object updated" << endl;
+		} else if (selectedOption == 4) {
+			cout << "Object deleted" << endl;
+		} else if (selectedOption == 5) {
+			cout << "Program quitting..." << endl;
+		} else {
+			cout << "Invalid option" << endl;
+		}
+
+	}
+};
+
+class ComparingFloats {
+public:
+	void comparingFloatsExample() {
+		float value = 1.1;
+
+		if(value == 1.1){
+			cout << "equals" << endl;
+		} else {
+			cout << "not equal" << endl;
+		}
+
+		cout << setprecision(10) << value << endl;
+
+		if(value < 1.100001){
+					cout << "equals" << endl;
+				} else {
+					cout << "not equal" << endl;
 				}
 
 	}
@@ -140,8 +193,8 @@ public:
 
 int main() {
 
-	IfStatement ifs;
-	ifs.ifStatementexample();
+	ComparingFloats compare;
+	compare.comparingFloatsExample();
 
 	return 0;
 }
