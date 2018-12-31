@@ -174,7 +174,7 @@ public:
 	void comparingFloatsExample() {
 		float value = 1.1;
 
-		if(value == 1.1){
+		if (value == 1.1) {
 			cout << "equals" << endl;
 		} else {
 			cout << "not equal" << endl;
@@ -182,20 +182,125 @@ public:
 
 		cout << setprecision(10) << value << endl;
 
-		if(value < 1.100001){
-					cout << "equals" << endl;
-				} else {
-					cout << "not equal" << endl;
-				}
+		if (value < 1.100001) {
+			cout << "equals" << endl;
+		} else {
+			cout << "not equal" << endl;
+		}
+
+	}
+};
+
+class Conditions {
+public:
+	void conditionsExample() {
+
+		int value1 = 7;
+		int value2 = 4;
+
+		if (value1 >= 5) {
+			cout << "Condition no 1: true" << endl;
+		} else {
+			cout << "Condition no 1: false" << endl;
+		}
+
+		if (value1 == 7 && value2 < 3) {
+			cout << "Condition no 2: true" << endl;
+		} else {
+			cout << "Condition no 2: false" << endl;
+		}
+
+		if (value1 == 7 || value2 < 3) {
+			cout << "Condition no 3: true" << endl;
+		} else {
+			cout << "Condition no 3: false" << endl;
+		}
+
+		if ((value2 != 8 && value1 == 10) || value1 < 10) {
+			cout << "Condition no 4: true" << endl;
+		} else {
+			cout << "Condition no 4: false" << endl;
+		}
+
+		bool condition1 = (value2 != 8) && (value1 == 10);
+		bool condition2 = value1 < 10;
+
+		cout << condition1 << endl;
+		cout << condition2 << endl;
+
+		if (condition1 || condition2) {
+			cout << "Condition no 5: true" << endl;
+		} else {
+			cout << "Condition no 5: false" << endl;
+		}
+
+	}
+};
+
+class WhileLoops {
+public:
+	void whileLoopsExample() {
+
+		int i = 0;
+
+		while (i <= 5) {
+			cout << "Loop no. " << i + 1 << endl;
+
+			i++;
+		}
+
+		cout << "Leaved the loop" << endl;
+	}
+};
+
+class DoWhileLoops {
+public:
+	void doWhileLoopExample1() {
+
+		int i = 0;
+
+		do {
+			cout << "Loop no. " << i + 1 << endl;
+			i++;
+		} while (i <= 3);
+
+	}
+
+	void doWhileLoopExample2() {
+
+		int i = 0;
+
+		do {
+			cout << "Loop no. " << i + 1 << endl;
+			i++;
+		} while (false);
+
+	}
+
+	void doWhileLoopExample3() {
+
+		const string password = "hello";
+
+		string input;
+
+		do {
+			cout << "Enter the password > " << flush;
+			cin >> input;
+
+			if(input != password){
+				cout << "Access denied" << endl;
+			}
+		} while (input != password);
+
+		cout << "Access granted" << endl;
 
 	}
 };
 
 int main() {
 
-	ComparingFloats compare;
-	compare.comparingFloatsExample();
+	DoWhileLoops doWhile;
+	doWhile.doWhileLoopExample3();
 
 	return 0;
 }
-
