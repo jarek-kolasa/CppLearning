@@ -287,7 +287,7 @@ public:
 			cout << "Enter the password > " << flush;
 			cin >> input;
 
-			if(input != password){
+			if (input != password) {
 				cout << "Access denied" << endl;
 			}
 		} while (input != password);
@@ -297,10 +297,101 @@ public:
 	}
 };
 
+class ForLoop {
+public:
+	void forLoopWxample() {
+
+		for (int i = 0; i < 10; i++) {
+			cout << "It's loop no. " << i + 1 << endl;
+		}
+
+	}
+};
+
+class BreakContinue {
+public:
+	void breakExample() {
+		for (int i = 0; i < 5; i++) {
+			cout << "Loop no." << i + 1 << endl;
+			if (i == 2) {
+				break;
+			}
+			cout << "Looping" << endl;
+		}
+	}
+
+	void continueExample() {
+		for (int i = 0; i < 5; i++) {
+			cout << "Loop no." << i + 1 << endl;
+			if (i == 2) {
+				continue;
+			}
+			cout << "Looping" << endl;
+		}
+	}
+
+	void breakPassword() {
+		const string password = "hello";
+		string inputPass;
+
+		do {
+			cout << "Enter the password > " << flush;
+			cin >> inputPass;
+
+			if (inputPass == password) {
+				cout << "Access granted" << endl;
+				break;
+			} else {
+				cout << "Access denied" << endl;
+			}
+
+		} while (true);
+
+		cout << "Program quitting..." << endl;
+
+	}
+};
+
+class Arrays {
+public:
+	void arraysExample() {
+
+		cout << endl << "Arrays of integers" << endl;
+		cout << "=================" << endl;
+
+		int values[3];
+
+		for (int i = 0; i < ((sizeof(values)) / (sizeof(*values))); i++) {
+			values[i] = i;
+			cout << values[i] << endl;
+		}
+
+		cout << endl << "Arrays of doubles" << endl;
+		cout << "=================" << endl;
+
+		double dValues[] = { 4.3, 12.35, 5.33, 14.6 };
+
+		for (int i = 0; i < ((sizeof(dValues)) / (sizeof(*dValues))); i++) {
+			cout << "Element at index " << i << " has value: " << dValues[i]
+					<< endl;
+		}
+
+		cout << endl << "Initializing with strings" << endl;
+		cout << "=================" << endl;
+
+		string text[] = { "one", "two", "three" };
+
+		for (int i = 0; i < ((sizeof(text)) / (sizeof(*text))); i++) {
+			cout << "Element at index " << i << " has value: " << text[i]
+					<< endl;
+		}
+
+	}
+};
+
 int main() {
 
-	DoWhileLoops doWhile;
-	doWhile.doWhileLoopExample3();
-
+	Arrays arrays;
+	arrays.arraysExample();
 	return 0;
 }
