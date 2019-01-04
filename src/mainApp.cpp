@@ -361,7 +361,7 @@ public:
 
 		int values[3];
 
-		for (int i = 0; i < ((sizeof(values)) / (sizeof(*values))); i++) {
+		for (unsigned int i = 0; i < ((sizeof(values)) / (sizeof(*values))); i++) {
 			values[i] = i;
 			cout << values[i] << endl;
 		}
@@ -371,7 +371,7 @@ public:
 
 		double dValues[] = { 4.3, 12.35, 5.33, 14.6 };
 
-		for (int i = 0; i < ((sizeof(dValues)) / (sizeof(*dValues))); i++) {
+		for (unsigned int i = 0; i < ((sizeof(dValues)) / (sizeof(*dValues))); i++) {
 			cout << "Element at index " << i << " has value: " << dValues[i]
 					<< endl;
 		}
@@ -381,7 +381,7 @@ public:
 
 		string text[] = { "one", "two", "three" };
 
-		for (int i = 0; i < ((sizeof(text)) / (sizeof(*text))); i++) {
+		for (unsigned int i = 0; i < ((sizeof(text)) / (sizeof(*text))); i++) {
 			cout << "Element at index " << i << " has value: " << text[i]
 					<< endl;
 		}
@@ -389,9 +389,82 @@ public:
 	}
 };
 
+class MultidimensionalArrays{
+public:
+	void mutlidimensionalArraysExample(){
+		string animals[2][3] = {
+				{"dog", "cat", "fox"},
+				{"mouse", "squirrel", "parrot"}
+		};
+
+		cout << "Size of multidimensional array: " << sizeof(animals) << endl;
+
+		for(int i=0; i<2; i++){
+			for(int j=0; j<3; j++){
+				cout << animals[i][j] << " " << flush;
+			}
+			cout << endl;
+		}
+	}
+
+public:
+	void mutlidimensionalArraysExample2(){
+		int numbers[10][10];
+
+		for(int i=0; i<10; i++){
+			numbers[i][0] = i+1;
+			// cout << numbers[i][0] << " " << flush;
+		}
+
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
+				numbers[i][j] = (numbers[i][0])*(j+1);
+				cout << numbers[i][j] << " " << flush;
+			}
+			cout << endl;
+		}
+	}
+};
+
+class SizeofArrays{
+public:
+	void sizeofArraysExample(){
+		int values[] = {4, 5, 6, 7};
+
+		cout << "Size of array: " << sizeof(values) << endl;
+		cout << "Size of int: " << sizeof(int) << endl;
+
+		for(unsigned int i=0; i < sizeof(values)/sizeof(int); i++){
+			cout << values[i] << " " << flush;
+		}
+	}
+	void sizeof2dArraysExample(){
+		string animals[2][3] = {
+						{"dog", "cat", "fox"},
+						{"mouse", "squirrel", "parrot"}
+				};
+
+		cout << "Size of string: " << sizeof(string) << endl;
+		cout << "Size of an array row: " << sizeof(animals[0]) << endl;
+		cout << "Size of multidimensional array [2][3]: " << sizeof(animals) << endl;
+
+		cout << endl;
+
+		for(unsigned int i=0; i < sizeof(animals)/sizeof(animals[0]); i++){
+			for(unsigned int j=0; j < sizeof(animals[0])/sizeof(string) ;j++){
+				cout << animals[i][j] << " " << flush;
+			}
+			cout << endl;
+		}
+
+	}
+};
+
+
 int main() {
 
-	Arrays arrays;
-	arrays.arraysExample();
+	SizeofArrays sizes;
+	sizes.sizeof2dArraysExample();
+
 	return 0;
 }
