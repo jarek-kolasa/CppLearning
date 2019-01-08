@@ -361,7 +361,8 @@ public:
 
 		int values[3];
 
-		for (unsigned int i = 0; i < ((sizeof(values)) / (sizeof(*values))); i++) {
+		for (unsigned int i = 0; i < ((sizeof(values)) / (sizeof(*values)));
+				i++) {
 			values[i] = i;
 			cout << values[i] << endl;
 		}
@@ -371,7 +372,8 @@ public:
 
 		double dValues[] = { 4.3, 12.35, 5.33, 14.6 };
 
-		for (unsigned int i = 0; i < ((sizeof(dValues)) / (sizeof(*dValues))); i++) {
+		for (unsigned int i = 0; i < ((sizeof(dValues)) / (sizeof(*dValues)));
+				i++) {
 			cout << "Element at index " << i << " has value: " << dValues[i]
 					<< endl;
 		}
@@ -389,18 +391,16 @@ public:
 	}
 };
 
-class MultidimensionalArrays{
+class MultidimensionalArrays {
 public:
-	void mutlidimensionalArraysExample(){
-		string animals[2][3] = {
-				{"dog", "cat", "fox"},
-				{"mouse", "squirrel", "parrot"}
-		};
+	void mutlidimensionalArraysExample() {
+		string animals[2][3] = { { "dog", "cat", "fox" }, { "mouse", "squirrel",
+				"parrot" } };
 
 		cout << "Size of multidimensional array: " << sizeof(animals) << endl;
 
-		for(int i=0; i<2; i++){
-			for(int j=0; j<3; j++){
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 3; j++) {
 				cout << animals[i][j] << " " << flush;
 			}
 			cout << endl;
@@ -408,17 +408,17 @@ public:
 	}
 
 public:
-	void mutlidimensionalArraysExample2(){
+	void mutlidimensionalArraysExample2() {
 		int numbers[10][10];
 
-		for(int i=0; i<10; i++){
-			numbers[i][0] = i+1;
+		for (int i = 0; i < 10; i++) {
+			numbers[i][0] = i + 1;
 			// cout << numbers[i][0] << " " << flush;
 		}
 
-		for(int i=0; i<10; i++){
-			for(int j=0; j<10; j++){
-				numbers[i][j] = (numbers[i][0])*(j+1);
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				numbers[i][j] = (numbers[i][0]) * (j + 1);
 				cout << numbers[i][j] << " " << flush;
 			}
 			cout << endl;
@@ -426,32 +426,33 @@ public:
 	}
 };
 
-class SizeofArrays{
+class SizeofArrays {
 public:
-	void sizeofArraysExample(){
-		int values[] = {4, 5, 6, 7};
+	void sizeofArraysExample() {
+		int values[] = { 4, 5, 6, 7 };
 
 		cout << "Size of array: " << sizeof(values) << endl;
 		cout << "Size of int: " << sizeof(int) << endl;
 
-		for(unsigned int i=0; i < sizeof(values)/sizeof(int); i++){
+		for (unsigned int i = 0; i < sizeof(values) / sizeof(int); i++) {
 			cout << values[i] << " " << flush;
 		}
 	}
-	void sizeof2dArraysExample(){
-		string animals[2][3] = {
-						{"dog", "cat", "fox"},
-						{"mouse", "squirrel", "parrot"}
-				};
+	void sizeof2dArraysExample() {
+		string animals[2][3] = { { "dog", "cat", "fox" }, { "mouse", "squirrel",
+				"parrot" } };
 
 		cout << "Size of string: " << sizeof(string) << endl;
 		cout << "Size of an array row: " << sizeof(animals[0]) << endl;
-		cout << "Size of multidimensional array [2][3]: " << sizeof(animals) << endl;
+		cout << "Size of multidimensional array [2][3]: " << sizeof(animals)
+				<< endl;
 
 		cout << endl;
 
-		for(unsigned int i=0; i < sizeof(animals)/sizeof(animals[0]); i++){
-			for(unsigned int j=0; j < sizeof(animals[0])/sizeof(string) ;j++){
+		for (unsigned int i = 0; i < sizeof(animals) / sizeof(animals[0]);
+				i++) {
+			for (unsigned int j = 0; j < sizeof(animals[0]) / sizeof(string);
+					j++) {
 				cout << animals[i][j] << " " << flush;
 			}
 			cout << endl;
@@ -460,11 +461,124 @@ public:
 	}
 };
 
+class SwitchStatement {
+public:
+	void switchExample() {
+		int value = 5;
+
+		const int number = 5; // if I want to get variable in switch statement it has to be const
+
+		switch (value) {
+		case 4:
+			cout << "Value is 4" << endl;
+			break;
+		case number:
+			cout << "Value is 5" << endl;
+			break;
+		case 6:
+			cout << "Value is 6" << endl;
+			break;
+		default:
+			cout << "Unrecognized value" << endl;
+		}
+	}
+
+public:
+	void menuUsingSwitch() {
+
+		int userChoice;
+
+		do {
+			cout << endl << "......Menu......" << endl;
+			cout << "1. Create" << endl;
+			cout << "2. Read" << endl;
+			cout << "3. Update" << endl;
+			cout << "4. Delete" << endl;
+			cout << "5. Quit" << endl;
+
+			cout << endl << "Choose the option: " << flush;
+
+			cin >> userChoice;
+
+			switch (userChoice) {
+			case 1:
+				cout << "Object created" << endl;
+				break;
+			case 2:
+				cout << "Object read" << endl;
+				break;
+			case 3:
+				cout << "Object updated" << endl;
+				break;
+			case 4:
+				cout << "Object deleted" << endl;
+				break;
+			case 5:
+				cout << "Bye... " << flush;
+				break;
+			default:
+				cout << "Unrecognized value" << endl;
+			}
+
+		} while (userChoice != 5);
+
+		cout << "Quitting..." << endl;
+	}
+};
+
+class Functions {
+	void menu() {
+		cout << "......Menu......" << endl;
+		cout << "1. Create" << endl;
+		cout << "2. Read" << endl;
+		cout << "3. Update" << endl;
+		cout << "4. Delete" << endl;
+		cout << "5. Quit" << endl;
+	}
+
+public:
+	void processSelection() {
+		int userChoice;
+
+		do {
+			cout << endl << "Choose the option: " << flush;
+
+			cin >> userChoice;
+
+			switch (userChoice) {
+			case 1:
+				cout << "Object created" << endl;
+				break;
+			case 2:
+				cout << "Object read" << endl;
+				break;
+			case 3:
+				cout << "Object updated" << endl;
+				break;
+			case 4:
+				cout << "Object deleted" << endl;
+				break;
+			case 5:
+				cout << "Bye... " << flush;
+				break;
+			default:
+				cout << "Unrecognized value" << endl;
+			}
+
+		} while (userChoice != 5);
+	}
+
+public:
+	void menuFunction() {
+		menu();
+		processSelection();
+	}
+};
 
 int main() {
 
-	SizeofArrays sizes;
-	sizes.sizeof2dArraysExample();
+	Functions function;
+	function.menuFunction();
 
 	return 0;
 }
